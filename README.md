@@ -1,4 +1,4 @@
-## Word Processor Version Control
+## Word Processor Version Control System
 A Cross Platform Office Suites' Word Processor Version Control System
 
 ### Table of Contents
@@ -22,7 +22,7 @@ A Cross Platform Office Suites' Word Processor Version Control System
 
 ### <a name="what-is-it-about"></a>What is it about
 When producing a collaborative documentation file (Research result, Development documentation, Product guideline, etc.) via different word processor softwares like 
-LibreOffice, OpenOffice or MSWord, the biggest problem is to merge 'em all. This tool plays this role here for authors. Every privilleged user can retrieve different 
+LibreOffice, OpenOffice or MSWord, the biggest problem is to merge 'em all. This tool plays this role here for authors. Every privileged user can retrieve different 
 versions of shared document file, change content, submit changes and put them on server.
 
 ### <a name="how-does-this-work"></a>How does this work
@@ -81,7 +81,7 @@ root/
 
 ### <a name="coding-conventions"></a>Coding Conventions
 #### <a name="class-definition-and-implementation"></a>Class Definition and Implementation
-* Class Defination goes under include:
+* Class Definition goes under include:
 ```
 include/<Project Name>/<Module Name>/<Class Name>.h <── Namespace just as PSR defines (As same as directory names, hierarchically like that)
 ```
@@ -93,14 +93,14 @@ src/<Project Name>/<Module Name>/<Class Name>.cpp
 #### <a name="macros"></a>Macros
 Prefix all definition macros with project name:
 ```cpp
-#define MERCHACK_INC_H_PRODUCT
+#define WPVCS_INC_H_PRODUCT
 ```
 
 #### <a name="include-guard"></a>Include Guard
 Header files' include guard macro name would be like this:
 ```cpp
-#ifndef MERCHACK_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILE_SUFFIX>
-#define MERCHACK_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILE_SUFFIX>
+#ifndef WPVCS_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILE_SUFFIX>
+#define WPVCS_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILE_SUFFIX>
 
 ...
 
@@ -113,14 +113,14 @@ Header files' include guard macro name would be like this:
 * Source File		───> .cpp   ───> CPP
 
 #### <a name="namespace"></a>Namespace
-Namespaces have to be in UpperCamelCase, nestedly as same as directory goes.
+Namespaces have to be in UpperCamelCase and nested as same as directory goes.
 
 #### <a name="class-name"></a>Class Name
 Class names should be in UpperCamelCase and be defined in namespaces which exactly follows directory which header is in:
 ```
-merchack/model/product/unit.h
-Merchack::Model::Product::Unit
-└───────Namespace──────┘
+wpvcs/view/export.h
+Wpvcs::View::Export
+└Namespace┘
 ```
 
 #### <a name="method-name"></a>Method Name
