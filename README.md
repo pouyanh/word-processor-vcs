@@ -35,7 +35,7 @@ Raw, comparable content is fetched from server and will be converted to desired 
 Docx is a compressed archive containing document data in form of XML. So comparable version of docx is the decompressed archive files esp. the document.xml.
 
 
-### <a name="directory-structure"></a>Directory Structure
+### <a name="source-code-directory-structure"></a>Source Code Directory Structure
 ```
 root/
 │
