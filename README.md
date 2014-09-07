@@ -101,9 +101,9 @@ Header files' include guard macro name would be like this:
 ```
 
 #### <a name="files'-extension-and-macro-suffix"></a>Files' Extension and Macro Suffix
-Class Definition	───> .h	    ───> H
-Class Implementation	───> .cpp   ───> CPP
-Source File		───> .cpp   ───> CPP
+* Class Definition	───> .h	    ───> H
+* Class Implementation	───> .cpp   ───> CPP
+* Source File		───> .cpp   ───> CPP
 
 #### <a name="namespace"></a>Namespace
 Namespaces have to be in UpperCamelCase, nestedly as same as directory goes.
@@ -112,7 +112,9 @@ Namespaces have to be in UpperCamelCase, nestedly as same as directory goes.
 Class names should be in UpperCamelCase and be defined in namespaces which exactly follows directory which header is in:
 
 merchack/model/product/unit.h
+
 Merchack::Model::Product::Unit
+
 └───────Namespace──────┘
 
 #### <a name="method-name"></a>Method Name
