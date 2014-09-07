@@ -48,7 +48,7 @@ Docx is a compressed archive containing document data in form of XML. So compara
 ├── LICENSE (Project license file)
 ├── COPYING (Plaintext copy of project license)
 │
-├── include/ (Definition header files)
+├── include/ (Definition header files; Project's public header files, Application library interfaces, Necessary third-party headers not existing under /usr/local/include)
 │   │
 │   ├── <Module Directories>/ (Modules's classes' definition header files)
 │   │
@@ -72,7 +72,6 @@ Docx is a compressed archive containing document data in form of XML. So compara
 │       │
 │       └── main.cxx (Application main function)
 │
-├── include/ (Project's public header files, Application library interfaces, Necessary third-party headers not existing under /usr/local/include)
 ├── lib/ (Any library which project, any third-party or other needs in development)
 ├── test/ (Tests of project)
 ├── tools/ (Scripts, tools and module required during development such as ODB Build, Insert, Migrate jobz)
