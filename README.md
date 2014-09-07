@@ -36,6 +36,7 @@ Docx is a compressed archive containing document data in form of XML. So compara
 
 
 ### <a name="directory-structure"></a>Directory Structure
+```
 root/
 │
 ├── configure (The configure script file)
@@ -75,13 +76,18 @@ root/
 ├── tools/ (Scripts, tools and module required during development such as ODB Build, Insert, Migrate jobz)
 ├── build/ (Intermediate files generated during build process)
 └── bin/ (Generated executable files)
+```
 
 ### <a name="coding-conventions"></a>Coding Conventions
 #### <a name="class-definition-and-implementation"></a>Class Definition and Implementation
 * Class Defination goes under include:
-  e.g.  include/<Project Name>/<Module Name>/<Class Name>.h <── Namespace just as PSR defines (As same as directory names, hierarchically like that)
+```
+include/<Project Name>/<Module Name>/<Class Name>.h <── Namespace just as PSR defines (As same as directory names, hierarchically like that)
+```
 * Class implementation goes under src:
-  e.g.  src/<Project Name>/<Module Name>/<Class Name>.cpp
+```
+src/<Project Name>/<Module Name>/<Class Name>.cpp
+```
 
 #### <a name="macros"></a>Macros
 Prefix all definition macros with project name:
@@ -110,12 +116,11 @@ Namespaces have to be in UpperCamelCase, nestedly as same as directory goes.
 
 #### <a name="class-name"></a>Class Name
 Class names should be in UpperCamelCase and be defined in namespaces which exactly follows directory which header is in:
-
+```
 merchack/model/product/unit.h
-
 Merchack::Model::Product::Unit
-
 └───────Namespace──────┘
+```
 
 #### <a name="method-name"></a>Method Name
 Methods should be verbs in lowerCamelCase or a multi-word name that begins with a verb in lowercase:
