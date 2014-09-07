@@ -5,7 +5,7 @@ A Cross Platform Office Suites' Word Processor Version Control System
 * [What is it about](#what-is-it-about)
 * [How does this work](#how-does-this-work)
 * [Comparable versions](#comparable-versions)
-** [Office Open XML Docx](office-open-xml-docx)
+	* [Office Open XML Docx](office-open-xml-docx)
 
 ### <a name="what-is-it-about"></a>What is it about
 When producing a collaborative documentation file (Research result, Development documentation, Product guideline, etc.) via different word processor softwares like 
