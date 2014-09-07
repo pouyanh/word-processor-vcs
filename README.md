@@ -4,19 +4,21 @@ A Cross Platform Office Suites' Word Processor Version Control System
 ### Table of Contents
 * [What is it about](#what-is-it-about)
 * [How does this work](#how-does-this-work)
+	* [Put On Server](#put-on-server)
+	* [Fetch From Server](#fetch-from-server)
 * [Comparable versions](#comparable-versions)
 	* [Office Open XML Docx](office-open-xml-docx)
 * [Source Code Directory Structure](#source-code-directory-structure)
 * [Coding Conventions](#coding-conventions)
-    * [Class Definition and Implementation](#class-definition-and-implementation)
-    * [Macros](#macros)
-    * [Include Guard](#include-guard)
-    * [Files' Extension and Macro Suffix](#files'-extension-and-macro-suffix)
-    * [Namespace](#namespace)
-    * [Class Name](#class-name)
-    * [Method Name](#method-name)
-    * [Variable Name](#variable-name)
-    * [Constant Name](#constant-name)
+	* [Class Definition and Implementation](#class-definition-and-implementation)
+	* [Macros](#macros)
+	* [Include Guard](#include-guard)
+	* [Files' Extension and Macro Suffix](#files'-extension-and-macro-suffix)
+	* [Namespace](#namespace)
+	* [Class Name](#class-name)
+	* [Method Name](#method-name)
+	* [Variable Name](#variable-name)
+	* [Constant Name](#constant-name)
 
 ### <a name="what-is-it-about"></a>What is it about
 When producing a collaborative documentation file (Research result, Development documentation, Product guideline, etc.) via different word processor softwares like 
@@ -24,14 +26,13 @@ LibreOffice, OpenOffice or MSWord, the biggest problem is to merge 'em all. This
 versions of shared document file, change content, submit changes and put them on server.
 
 ### <a name="how-does-this-work"></a>How does this work
-#### Put On Server
+##### <a name="put-on-server"></a>Put On Server
 New document file is converted to a comparable content and differences will be tracked, committed and pushed to server.
-
-## Fetch From Server
+##### <a name="fetch-from-server"></a>Fetch From Server
 Raw, comparable content is fetched from server and will be converted to desired output for serve.
 
 ### <a name="comparable-versions"></a>Comparable versions
-#### <a name="office-open-xml-docx"></a>Office Open XML Docx
+##### <a name="office-open-xml-docx"></a>Office Open XML Docx
 Docx is a compressed archive containing document data in form of XML. So comparable version of docx is the decompressed archive files esp. the document.xml.
 
 
