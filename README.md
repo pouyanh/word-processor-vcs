@@ -99,8 +99,8 @@ Prefix all definition macros with project name:
 #### <a name="include-guard"></a>Include Guard
 Header files' include guard macro name would be like this:
 ```cpp
-#ifndef WPVCS_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILE_SUFFIX>
-#define WPVCS_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILE_SUFFIX>
+#ifndef WPVCS_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILENAME>_<FILE_SUFFIX>
+#define WPVCS_<UNDERSCORE_SEPARATED_NAMESPACE>_<FILENAME>_<FILE_SUFFIX>
 
 ...
 
@@ -108,7 +108,7 @@ Header files' include guard macro name would be like this:
 ```
 
 #### <a name="files'-extension-and-macro-suffix"></a>Files' Extension and Macro Suffix
-* Class Definition	───> .h	    ───> H
+* Class Definition	───> .hxx   ───> HXX
 * Class Implementation	───> .cxx   ───> CXX
 * Source File		───> .cxx   ───> CXX
 
