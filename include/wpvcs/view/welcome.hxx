@@ -14,6 +14,8 @@ namespace Wpvcs
 {
     namespace View
     {
+//	QT_USE_NAMESPACE
+	
 	class Welcome : public QDialog
 	{
 	    Q_OBJECT

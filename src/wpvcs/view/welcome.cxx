@@ -11,6 +11,8 @@ namespace Wpvcs
 {
     namespace View
     {
+	QT_USE_NAMESPACE
+	
 	Welcome::Welcome()
 	{
 	    widget.setupUi(this);

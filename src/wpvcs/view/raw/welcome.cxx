@@ -13,6 +13,8 @@ namespace Wpvcs
     {
 	namespace Raw
 	{
+	    QT_USE_NAMESPACE
+	    
 	    void Welcome::setupUi(QDialog* welcome)
 	    {
 		if (welcome->objectName().isEmpty()) {

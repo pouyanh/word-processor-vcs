@@ -26,6 +26,8 @@ namespace Wpvcs
     {
 	namespace Raw
 	{
+	    QT_USE_NAMESPACE
+	    
 	    class Welcome
 	    {
 	    public:
