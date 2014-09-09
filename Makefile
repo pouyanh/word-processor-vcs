@@ -2,7 +2,7 @@ UIC = uic
 MKDIR = mkdir
 
 CXXFLAGS = -std=c++11 -lstdc++ -fPIC
-PATH_INC = include /usr/include/qt
+PATH_INC = include
 INC_EXPR = $(foreach dir, $(PATH_INC),-I $(dir))
 
 all: bin/wpvcs
@@ -30,6 +30,9 @@ view: include/wpvcs/view/ui/*.ui
 	    baseName=$$(basename $$view);\
 	    $(UIC) $$view -o $$dirName/../raw/$${baseName%.ui}.hxx;\
 	done
+
+gtk:
+	$(CXX)  $(CXXFLAGS) $(INC_EXPR) -Wall -g -o bin/main src/wpvcs/main.cxx -export-dynamic `pkg-config --cflags --libs gtk+-3.0`
 	
 clean:
 	$(RM) -f build/* bin/*
