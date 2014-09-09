@@ -1,7 +1,7 @@
 UIC = uic
 
 CXXFLAGS = -std=c++11 -lstdc++
-PATH_INC = include
+PATH_INC = include /usr/include/qt
 
 all: wpvcs
 	
@@ -16,7 +16,7 @@ view: include/wpvcs/view/ui/*.ui
 	do\
 	    dirName=$$(dirname $$view);\
 	    baseName=$$(basename $$view);\
-	    $(UIC) $$view -o $$dirName/../raw/$$baseName.hxx;\
+	    $(UIC) $$view -o $$dirName/../raw/$${baseName%.ui}.hxx;\
 	done
 	
 clean:
