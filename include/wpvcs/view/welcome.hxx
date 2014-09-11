@@ -8,22 +8,20 @@
 #ifndef WPVCS_VIEW_WELCOME_HXX
 #define	WPVCS_VIEW_WELCOME_HXX
 
-#include <wpvcs/view/raw/welcome.hxx>
+#include <wx-3.0/wx/wxprec.h>
 
-namespace Wpvcs
+#ifndef WX_PRECOMP
+    #include <wx-3.0/wx/wx.h>
+#endif
+
+namespace wpvcs
 {
     namespace View
     {
-//	QT_USE_NAMESPACE
-	
-	class Welcome : public QDialog
+	class Welcome: public ::wxFrame
 	{
-	    Q_OBJECT
 	public:
-	    Welcome();
-	    virtual ~Welcome();
-	private:
-	    Raw::Welcome widget;
+	    Welcome(const ::wxString& title, const ::wxPoint& pos, const ::wxSize& size);
 	};
     }
 }

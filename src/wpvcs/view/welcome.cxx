@@ -7,19 +7,12 @@
 
 #include <wpvcs/view/welcome.hxx>
 
-namespace Wpvcs
-{
-    namespace View
-    {
-	QT_USE_NAMESPACE
-	
-	Welcome::Welcome()
+namespace Wpvcs {
+    namespace View {
+	Welcome::Welcome(const ::wxString& title, const ::wxPoint& pos, const ::wxSize& size)
+	: wxFrame(NULL, wxID_ANY, title, pos, size)
 	{
-	    widget.setupUi(this);
-	}
-
-	Welcome::~Welcome()
-	{
+	    SetStatusText("Word Processor Version Control System");
 	}
     }
 }

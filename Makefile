@@ -7,7 +7,7 @@ INC_EXPR = $(foreach dir, $(PATH_INC),-I $(dir))
 
 all: bin/wpvcs
 	
-bin/wpvcs: build/wpvcs/wpvcs.o build/wpvcs/view/welcome.o build/wpvcs/view/raw/welcome.o
+bin/wpvcs: build/wpvcs/wpvcs.o build/wpvcs/app.o build/wpvcs/view/welcome.o
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 	
@@ -15,11 +15,11 @@ build/wpvcs/wpvcs.o: src/wpvcs/main.cxx
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(CXXFLAGS) $(INC_EXPR) -c $< -o $@
 
-build/wpvcs/view/welcome.o: src/wpvcs/view/welcome.cxx
+build/wpvcs/app.o: src/wpvcs/app.cxx
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(CXXFLAGS) $(INC_EXPR) -c $< -o $@
-	
-build/wpvcs/view/raw/welcome.o: src/wpvcs/view/raw/welcome.cxx
+
+build/wpvcs/view/welcome.o: src/wpvcs/view/welcome.cxx
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(CXXFLAGS) $(INC_EXPR) -c $< -o $@
 	
