@@ -1,15 +1,18 @@
 UIC = uic
 MKDIR = mkdir
+CXX = g++
+LD = ld
 
-CXXFLAGS = -std=c++11 -lstdc++ -fPIC
 PATH_INC = include
-INC_EXPR = $(foreach dir, $(PATH_INC),-I $(dir))
+INC_EXPR = $(foreach dir, $(PATH_INC),-I $(dir)) $(LIBS) $(shell wx-config --cxxflags)
+CXXFLAGS = -std=c++11 -lstdc++ -fPIC
+LDLIBS = $(shell wx-config --libs)
 
 all: bin/wpvcs
 	
 bin/wpvcs: build/wpvcs/wpvcs.o build/wpvcs/app.o build/wpvcs/view/welcome.o
 	$(MKDIR) -p $$(dirname $@)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(LDFLAGS) $(LDLIBS) -o $@ $^
 	
 build/wpvcs/wpvcs.o: src/wpvcs/main.cxx
 	$(MKDIR) -p $$(dirname $@)

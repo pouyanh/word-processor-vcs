@@ -9,7 +9,7 @@ A Cross Platform Office Suites' Word Processor Version Control System
 * [Comparable versions](#comparable-versions)
 	* [Office Open XML Docx](office-open-xml-docx)
 * [Source Code Directory Structure](#source-code-directory-structure)
-* [Coding Conventions](#coding-conventions)
+* [Coding Standards](#coding-standards)
 	* [Class Definition and Implementation](#class-definition-and-implementation)
 	* [Macros](#macros)
 	* [Include Guard](#include-guard)
@@ -79,7 +79,7 @@ Docx is a compressed archive containing document data in form of XML. So compara
 └── bin/ (Generated executable files)
 ```
 
-### <a name="coding-conventions"></a>Coding Conventions
+### <a name="coding-standards"></a>Coding Standards
 #### <a name="class-definition-and-implementation"></a>Class Definition and Implementation
 * Class Definition goes under include:
 ```

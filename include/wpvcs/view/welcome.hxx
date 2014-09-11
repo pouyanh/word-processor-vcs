@@ -8,13 +8,13 @@
 #ifndef WPVCS_VIEW_WELCOME_HXX
 #define	WPVCS_VIEW_WELCOME_HXX
 
-#include <wx-3.0/wx/wxprec.h>
+#include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
-    #include <wx-3.0/wx/wx.h>
+    #include <wx/wx.h>
 #endif
 
-namespace wpvcs
+namespace Wpvcs
 {
     namespace View
     {
