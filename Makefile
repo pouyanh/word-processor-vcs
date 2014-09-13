@@ -38,4 +38,4 @@ gtk:
 	$(CXX)  $(CXXFLAGS) $(INC_EXPR) -Wall -g -o bin/main src/wpvcs/main.cxx -export-dynamic `pkg-config --cflags --libs gtk+-3.0`
 	
 clean:
-	$(RM) -f build/* bin/*
+	$(RM) -r build/* bin/*
