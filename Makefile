@@ -3,28 +3,45 @@ MKDIR = mkdir
 CXX = g++
 LD = ld
 
-PATH_INC = include
-INC_EXPR = $(foreach dir, $(PATH_INC),-I $(dir)) $(LIBS) $(shell wx-config --cxxflags)
 CXXFLAGS = -std=c++11 -lstdc++ -fPIC
-LDLIBS = $(shell wx-config --libs)
 
-all: bin/wpvcs
+DIR_BIN = bin
+DIR_BUILD = build
+DIR_LIB = $(DIR_BUILD)/lib
+DIR_INC = include
+DIR_SRC = src
+
+LIBS = opencv
+
+PATH_INC = $(DIR_INC)
+INC_EXPR = $(foreach dir, $(PATH_INC),-I$(dir)) \
+    $(foreach lib, $(LIBS),$(shell pkg-config --cflags $(lib))) \
+    $(shell wx-config --cxxflags)
+
+LIB_INC = $(DIR_LIB)
+LIBS_NATIVE = 
+LDLIBS =  $(foreach lib, $(LIBS),$(shell pkg-config --libs $(lib))) \
+    $(foreach dir, $(LIB_INC), -L$(dir)) \
+    $(foreach lib, $(LIBS_NATIVE),-l$(lib)) \
+    $(shell wx-config --libs)
+
+all: libraries standalone
+
+libraries: $(foreach lib, $(LIBS_NATIVE), $(DIR_LIB)/lib$(lib).so)
+
+standalone: $(DIR_BIN)/wpvcs
 	
-bin/wpvcs: build/wpvcs/wpvcs.o build/wpvcs/app.o build/wpvcs/view/welcome.o
+$(DIR_BIN)/wpvcs: $(DIR_BUILD)/wpvcs/main.o $(DIR_BUILD)/wpvcs/app.o $(DIR_BUILD)/wpvcs/view/welcome.o
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(LDFLAGS) $(LDLIBS) -o $@ $^
 	
-build/wpvcs/wpvcs.o: src/wpvcs/main.cxx
+$(DIR_BUILD)/%.o: $(DIR_SRC)/%.cxx
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(CXXFLAGS) $(INC_EXPR) -c $< -o $@
 
-build/wpvcs/app.o: src/wpvcs/app.cxx
+$(DIR_LIB)/lib%.so: $(DIR_BUILD)/%.o
 	$(MKDIR) -p $$(dirname $@)
-	$(CXX) $(CXXFLAGS) $(INC_EXPR) -c $< -o $@
-
-build/wpvcs/view/welcome.o: src/wpvcs/view/welcome.cxx
-	$(MKDIR) -p $$(dirname $@)
-	$(CXX) $(CXXFLAGS) $(INC_EXPR) -c $< -o $@
+	$(CXX) -shared -o $@ $<
 	
 view: include/wpvcs/view/ui/*.ui
 	for view in $^;\
@@ -33,9 +50,6 @@ view: include/wpvcs/view/ui/*.ui
 	    baseName=$$(basename $$view);\
 	    $(UIC) $$view -o $$dirName/../raw/$${baseName%.ui}.hxx;\
 	done
-
-gtk:
-	$(CXX)  $(CXXFLAGS) $(INC_EXPR) -Wall -g -o bin/main src/wpvcs/main.cxx -export-dynamic `pkg-config --cflags --libs gtk+-3.0`
 	
 clean:
 	$(RM) -r build/* bin/*
