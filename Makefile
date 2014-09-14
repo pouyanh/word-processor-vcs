@@ -11,7 +11,7 @@ DIR_LIB = $(DIR_BUILD)/lib
 DIR_INC = include
 DIR_SRC = src
 
-LIBS = opencv
+LIBS = 
 
 PATH_INC = $(DIR_INC)
 INC_EXPR = $(foreach dir, $(PATH_INC),-I$(dir)) \

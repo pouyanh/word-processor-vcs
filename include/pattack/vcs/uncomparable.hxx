@@ -8,6 +8,14 @@
 #ifndef PATTACK_VCS_UNCOMPARABLE_HXX
 #define	PATTACK_VCS_UNCOMPARABLE_HXX
 
+namespace Pattack
+{
+    namespace Vcs
+    {
+	class Uncomparable;
+    }
+}
+
 #include <pattack/vcs/comparable.hxx>
 
 namespace Pattack
@@ -16,7 +24,8 @@ namespace Pattack
     {
 	class Uncomparable
 	{
-	    virtual Comparable getComparable() = 0;
+	    virtual Comparable& getComparable() = 0;
+	    virtual void import(Comparable&) = 0;
 	};
     }
 }

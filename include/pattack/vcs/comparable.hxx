@@ -12,9 +12,19 @@ namespace Pattack
 {
     namespace Vcs
     {
+	class Comparable;
+    }
+}
+
+#include <pattack/vcs/uncomparable.hxx>
+
+namespace Pattack
+{
+    namespace Vcs
+    {
 	class Comparable
 	{
-	    
+	    virtual Uncomparable& publish(Uncomparable&) = 0;
 	};
     }
 }
