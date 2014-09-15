@@ -14,7 +14,7 @@ namespace Wpvcs
 	    
 	    void Msword::load(const std::string& filename)
 	    {
-		std::cout<<repository.getDirectory();
+		std::cout<<repository.getDirectory()<<std::endl;
 	    }
 	}
     }

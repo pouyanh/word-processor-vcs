@@ -26,7 +26,6 @@ LDLIBS =  $(foreach lib, $(LIBS),$(shell pkg-config --libs $(lib))) \
     $(shell wx-config --libs)
 
 OBJECTS = $(DIR_BUILD)/wpvcs/main.o \
-    $(DIR_BUILD)/wpvcs/app.o \
     $(DIR_BUILD)/wpvcs/vcs/exporter/msword.o \
     $(DIR_BUILD)/wpvcs/vcs/importer/msword.o \
     $(DIR_BUILD)/pattack/vcs/repository.o \
