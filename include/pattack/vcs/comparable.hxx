@@ -24,7 +24,8 @@ namespace Pattack
     {
 	class Comparable
 	{
-	    virtual Uncomparable& publish(Uncomparable&) = 0;
+	public:
+	    virtual Uncomparable& publish(Uncomparable& exportInterface) = 0;
 	};
     }
 }

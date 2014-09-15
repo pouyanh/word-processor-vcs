@@ -24,6 +24,7 @@ namespace Pattack
     {
 	class Uncomparable
 	{
+	public:
 	    virtual Comparable& getComparable() = 0;
 	    virtual void import(Comparable&) = 0;
 	};
