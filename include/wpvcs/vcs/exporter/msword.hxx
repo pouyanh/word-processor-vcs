@@ -9,7 +9,7 @@
 #define	WPVCS_VCS_EXPORTER_MSWORD_HXX
 
 #include <pattack/vcs/exporter.hxx>
-#include <cstdlib>
+#include <string>
 
 namespace Wpvcs
 {
@@ -17,12 +17,12 @@ namespace Wpvcs
     {
 	namespace Exporter
 	{
-	    using namespace std;
-	    
-	    class Msword: private Pattack::Vcs::Exporter
+	    class Msword: public Pattack::Vcs::Exporter
 	    {
 	    public:
-		void save(const string& filename);
+		Msword(Pattack::Vcs::Repository repository);
+		
+		void save(const std::string& filename);
 	    };
 	}
     }

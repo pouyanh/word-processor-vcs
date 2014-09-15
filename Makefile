@@ -25,13 +25,21 @@ LDLIBS =  $(foreach lib, $(LIBS),$(shell pkg-config --libs $(lib))) \
     $(foreach lib, $(LIBS_NATIVE),-l$(lib)) \
     $(shell wx-config --libs)
 
+OBJECTS = $(DIR_BUILD)/wpvcs/main.o \
+    $(DIR_BUILD)/wpvcs/app.o \
+    $(DIR_BUILD)/wpvcs/vcs/exporter/msword.o \
+    $(DIR_BUILD)/wpvcs/vcs/importer/msword.o \
+    $(DIR_BUILD)/pattack/vcs/repository.o \
+    $(DIR_BUILD)/pattack/vcs/importer.o \
+    $(DIR_BUILD)/pattack/vcs/exporter.o
+
 all: libraries standalone
 
 libraries: $(foreach lib, $(LIBS_NATIVE), $(DIR_LIB)/lib$(lib).so)
 
 standalone: $(DIR_BIN)/wpvcs
 	
-$(DIR_BIN)/wpvcs: $(DIR_BUILD)/wpvcs/main.o $(DIR_BUILD)/wpvcs/app.o
+$(DIR_BIN)/wpvcs: $(OBJECTS)
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(LDFLAGS) $(LDLIBS) -o $@ $^
 	

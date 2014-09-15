@@ -1,4 +1,5 @@
 #include <wpvcs/vcs/exporter/msword.hxx>
+#include <iostream>
 
 namespace Wpvcs
 {
@@ -6,8 +7,14 @@ namespace Wpvcs
     {
 	namespace Exporter
 	{
-	    void Msword::save(const string& filename)
+	    Msword::Msword(Pattack::Vcs::Repository repository)
+		: Pattack::Vcs::Exporter(repository)
 	    {
+	    }
+	    
+	    void Msword::save(const std::string& filename)
+	    {
+		std::cout<<repository.getDirectory();
 	    }
 	}
     }

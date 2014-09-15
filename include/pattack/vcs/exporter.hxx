@@ -9,23 +9,21 @@
 #define	PATTACK_VCS_EXPORTER_HXX
 
 #include <pattack/vcs/repository.hxx>
-#include <cstdlib>
+#include <string>
 
 namespace Pattack
 {
     namespace Vcs
     {
-	using namespace std;
-	
 	class Exporter
 	{
-	private:
+	protected:
 	    Repository repository;
 	    
 	public:
 	    Exporter(Repository repository);
 	    
-	    virtual void save(const string& filename) = 0;
+	    virtual void save(const std::string& filename) = 0;
 	};
     }
 }

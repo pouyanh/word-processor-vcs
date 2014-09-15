@@ -8,7 +8,7 @@
 #ifndef PATTACK_VCS_REPOSITORY_HXX
 #define	PATTACK_VCS_REPOSITORY_HXX
 
-#include <cstdlib>
+#include <string>
 #include <list>
 #include <git2.h>
 
@@ -16,20 +16,20 @@ namespace Pattack
 {
     namespace Vcs
     {
-	using namespace std;
-	
 	class Repository
 	{
 	private:
-	    string directory;
-	    list<string> remotes;
+	    std::string directory;
+	    std::list<std::string> remotes;
 	    
 	public:
-	    Repository(string directory);
+	    Repository(std::string directory);
 	    
 	    void push();
 	    void pull();
 	    void commit();
+	    
+	    std::string getDirectory();
 	};
     }
 }

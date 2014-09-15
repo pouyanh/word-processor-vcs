@@ -4,8 +4,13 @@ namespace Pattack
 {
     namespace Vcs
     {
-	Repository::Repository(string directory) : directory(directory)
+	Repository::Repository(std::string directory) : directory(directory)
 	{
+	}
+	
+	std::string Repository::getDirectory()
+	{
+	    return directory;
 	}
     }
 }

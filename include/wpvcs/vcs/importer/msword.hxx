@@ -9,7 +9,7 @@
 #define	WPVCS_VCS_IMPORTER_MSWORD_HXX
 
 #include <pattack/vcs/importer.hxx>
-#include <cstdlib>
+#include <string>
 
 namespace Wpvcs
 {
@@ -17,12 +17,12 @@ namespace Wpvcs
     {
 	namespace Importer
 	{
-	    using namespace std;
-	    
-	    class Msword: private Pattack::Vcs::Importer
+	    class Msword: public Pattack::Vcs::Importer
 	    {
 	    public:
-		void load(const string& filename);
+		Msword(Pattack::Vcs::Repository repository);
+		
+		void load(const std::string& filename);
 	    };
 	}
     }

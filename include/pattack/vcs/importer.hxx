@@ -9,23 +9,21 @@
 #define	PATTACK_VCS_IMPORTER_HXX
 
 #include <pattack/vcs/repository.hxx>
-#include <cstdlib>
+#include <string>
 
 namespace Pattack
 {
     namespace Vcs
     {
-	using namespace std;
-	
 	class Importer
 	{
-	private:
+	protected:
 	    Repository repository;
 	    
 	public:
 	    Importer(Repository repository);
 	    
-	    virtual void load(const string &filename) = 0;
+	    virtual void load(const std::string &filename) = 0;
 	};
     }
 }
