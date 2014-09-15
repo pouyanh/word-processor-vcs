@@ -31,7 +31,7 @@ libraries: $(foreach lib, $(LIBS_NATIVE), $(DIR_LIB)/lib$(lib).so)
 
 standalone: $(DIR_BIN)/wpvcs
 	
-$(DIR_BIN)/wpvcs: $(DIR_BUILD)/wpvcs/main.o $(DIR_BUILD)/wpvcs/app.o $(DIR_BUILD)/wpvcs/view/welcome.o
+$(DIR_BIN)/wpvcs: $(DIR_BUILD)/wpvcs/main.o $(DIR_BUILD)/wpvcs/app.o
 	$(MKDIR) -p $$(dirname $@)
 	$(CXX) $(LDFLAGS) $(LDLIBS) -o $@ $^
 	

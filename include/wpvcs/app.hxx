@@ -5,8 +5,8 @@
  * Created on September 11, 2014, 11:15 PM
  */
 
-#ifndef WPVCS_MAIN_HXX
-#define	WPVCS_MAIN_HXX
+#ifndef WPVCS_APP_HXX
+#define	WPVCS_APP_HXX
 
 #include <wx/wxprec.h>
 
@@ -22,5 +22,4 @@ namespace Wpvcs
     };
 }
 
-#endif	/* WPVCS_MAIN_HXX */
-
+#endif	/* WPVCS_APP_HXX */

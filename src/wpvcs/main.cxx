@@ -6,5 +6,8 @@
  */
 
 #include <wpvcs/app.hxx>
+#include <pattack/vcs/repository.hxx>
+#include <wpvcs/vcs/exporter/msword.hxx>
+#include <wpvcs/vcs/importer/msword.hxx>
 
 wxIMPLEMENT_APP(Wpvcs::App);

@@ -4,9 +4,8 @@ namespace Pattack
 {
     namespace Vcs
     {
-	Repository::Repository(string directory)
+	Repository::Repository(string directory) : directory(directory)
 	{
-	    local = new Directory(directory);
 	}
     }
 }
