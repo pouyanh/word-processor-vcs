@@ -21,8 +21,8 @@ namespace Pattack
 	class Archive
 	{
 	public:
-	    void Decompress(std::string filename, std::string directory = "");
-	    std::string Compress(std::string directory, std::string filename = "");
+	    static void decompress(std::string filename, std::string directory = "");
+	    static std::string compress(std::string directory, std::string filename = "");
 	};
     }
 }

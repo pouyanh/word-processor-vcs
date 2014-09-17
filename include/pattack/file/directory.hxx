@@ -9,6 +9,7 @@
 #define	PATTACK_DIRECTORY_HXX
 
 #include <string>
+#include <pattack/file/archive.hxx>
 
 namespace Pattack
 {
@@ -21,6 +22,8 @@ namespace Pattack
 	    
 	public:
 	    Directory(std::string directory = "");
+	    
+	    std::string compress(std::string filename = "");
 	};
     }
 }
