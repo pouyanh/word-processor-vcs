@@ -18,9 +18,23 @@ namespace Pattack
 	{
 	protected:
 	    std::string path;
+	    unsigned int resource;
 	    
 	public:
-	    File(std::string filename = "");
+	    File(const std::string filename, const unsigned int mode = File::mode::MODE_);
+	    
+	    enum mode
+	    {
+		MODE_READ,
+		MODE_WRITE,
+		MODE_APPEND,
+		MODE_READ_UPDATE,
+		MODE_WRITE_UPDATE,
+		MODE_APPEND_UPDATE
+	    };
+	    
+	    read();
+	    unsigned int write();
 	};
     }
 }
