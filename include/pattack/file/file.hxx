@@ -21,7 +21,7 @@ namespace Pattack
 	    unsigned int resource;
 	    
 	public:
-	    File(const std::string filename, const unsigned int mode = File::mode::MODE_);
+	    File(const std::string filename, const unsigned int mode = File::mode::MODE_READ_UPDATE);
 	    
 	    enum mode
 	    {
