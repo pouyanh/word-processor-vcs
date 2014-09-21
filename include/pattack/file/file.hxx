@@ -8,7 +8,8 @@
 #ifndef PATTACK_FILE_HXX
 #define	PATTACK_FILE_HXX
 
-#include <string>
+#include <cstdio>
+#include <cstring>
 
 namespace Pattack
 {
@@ -18,22 +19,27 @@ namespace Pattack
 	{
 	protected:
 	    std::string path;
-	    unsigned int resource;
+	    std::FILE* handler;
 	    
 	public:
-	    File(const std::string filename, const unsigned int mode = File::mode::MODE_READ_UPDATE);
+	    File(
+		const std::string filename,
+		const File::Mode mode = File::Mode::MODE_WRITE_UPDATE,
+		bool binary = false
+	    );
+	    ~File();
 	    
-	    enum mode
+	    enum Mode
 	    {
-		MODE_READ,
-		MODE_WRITE,
-		MODE_APPEND,
-		MODE_READ_UPDATE,
-		MODE_WRITE_UPDATE,
-		MODE_APPEND_UPDATE
+		MODE_READ = "r",
+		MODE_WRITE = "w",
+		MODE_APPEND = "a",
+		MODE_READ_UPDATE = "r+",
+		MODE_WRITE_UPDATE = "w+",
+		MODE_APPEND_UPDATE = "a+"
 	    };
 	    
-	    read();
+	    read(const unsigned int length);
 	    unsigned int write();
 	};
     }
