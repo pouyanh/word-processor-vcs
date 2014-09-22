@@ -18,8 +18,9 @@ namespace Pattack
 	class File
 	{
 	protected:
-	    std::string path;
-	    std::FILE* handler;
+	    std::string fPath;
+	    std::FILE* fHandler;
+	    long int fLength;
 	    
 	public:
 	    File(
@@ -39,7 +40,10 @@ namespace Pattack
 		MODE_APPEND_UPDATE = "a+"
 	    };
 	    
-	    read(const unsigned int length);
+	    std::string read(
+		const unsigned int length = 0,
+		const unsigned int offset = 0
+	    );
 	    unsigned int write();
 	};
     }
