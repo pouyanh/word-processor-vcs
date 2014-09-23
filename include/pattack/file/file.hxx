@@ -8,8 +8,10 @@
 #ifndef PATTACK_FILE_HXX
 #define	PATTACK_FILE_HXX
 
-#include <stdio>
-#include <string>
+#include <pattack/file/exception>
+#include <stdio.h>
+#include <string.h>
+#include <map>
 
 namespace Pattack
 {
@@ -17,6 +19,23 @@ namespace Pattack
     {
 	class File
 	{
+	public:
+	    enum Mode
+	    {
+		MODE_READ,
+		MODE_WRITE,
+		MODE_APPEND,
+		MODE_READ_UPDATE,
+		MODE_WRITE_UPDATE,
+		MODE_APPEND_UPDATE
+	    };
+	    
+	    enum MoveDirection
+	    {
+		FORWARD,
+		BACKWARD
+	    };
+	    
 	protected:
 	    std::string fPath;
 	    std::FILE* fHandler;
@@ -29,22 +48,6 @@ namespace Pattack
 		bool binary = false
 	    );
 	    ~File();
-	    
-	    enum Mode
-	    {
-		MODE_READ = "r",
-		MODE_WRITE = "w",
-		MODE_APPEND = "a",
-		MODE_READ_UPDATE = "r+",
-		MODE_WRITE_UPDATE = "w+",
-		MODE_APPEND_UPDATE = "a+"
-	    };
-	    
-	    enum MoveDirection
-	    {
-		FORWARD,
-		BACKWARD
-	    };
 	    
 	    void pace(
 		const unsigned int long stepLength,

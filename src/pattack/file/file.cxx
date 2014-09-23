@@ -7,9 +7,14 @@ namespace Pattack
     {
 	File::File(std::string filename, const File::Mode mode, bool binary)
 	{
-	    fHandler = fopen(filename, binary ? std::strcat(mode, "b") : mode);
+	    std::string modeMap[6] = {"r", "w", "a", "r+", "w+", "a+"};
+	    
+	    fHandler = fopen(
+		filename.c_str(),
+		(*(modeMap + mode) + (binary ? "b" : "")).c_str()
+	    );
 	    if (NULL == fHandler) {
-		throw std::exception("File could not be opened");
+		throw Exception("File could not be opened");
 	    }
 	    
 	    fseek(fHandler, 0, SEEK_END);
@@ -53,20 +58,23 @@ namespace Pattack
 	    buffer = (char*)malloc(sizeof(char) * length);
 	    
 	    if (buffer == NULL) {
-		throw std::exception("Memory allocation error");
+		throw Exception("Memory allocation error");
 	    }
 	    
 	    result = fread(buffer, 1, fLength, fHandler);
 	    
 	    if (result != fLength) {
-		throw std::exception("File read error");
+		throw Exception("File read error");
 	    }
 	    
 	    return new std::string(buffer);
 	}
 	
-	unsigned int write(std::string)
+	unsigned int write(std::string input)
 	{
+	    
+	    
+	    fflush(fHandler);
 	}
     }
 }

@@ -30,7 +30,8 @@ OBJECTS = $(DIR_BUILD)/wpvcs/main.o \
     $(DIR_BUILD)/wpvcs/vcs/importer/msword.o \
     $(DIR_BUILD)/pattack/vcs/repository.o \
     $(DIR_BUILD)/pattack/vcs/importer.o \
-    $(DIR_BUILD)/pattack/vcs/exporter.o
+    $(DIR_BUILD)/pattack/vcs/exporter.o \
+    $(DIR_BUILD)/pattack/file/file.o
 
 all: libraries standalone
 
