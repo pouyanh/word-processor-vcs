@@ -40,11 +40,20 @@ namespace Pattack
 		MODE_APPEND_UPDATE = "a+"
 	    };
 	    
-	    std::string read(
-		const unsigned int length = 0,
-		const unsigned int offset = 0
+	    enum MoveDirection
+	    {
+		FORWARD,
+		BACKWARD
+	    };
+	    
+	    void pace(
+		const unsigned int long stepLength,
+		bool absolute = false,
+		File::MoveDirection direction =  File::MoveDirection::FORWARD
 	    );
-	    unsigned int write();
+	    
+	    std::string read(const unsigned int length = 0);
+	    unsigned int write(std::string);
 	};
     }
 }

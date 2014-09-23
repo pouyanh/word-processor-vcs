@@ -1,7 +1,5 @@
 #include <pattack/file/file.hxx>
 #include <exception>
-#include <fcntl.h>
-#include <string>
 
 namespace Pattack
 {
@@ -17,7 +15,6 @@ namespace Pattack
 	    fseek(fHandler, 0, SEEK_END);
 	    fLength = ftell(fHandler);
 	    rewind(fHandler);
-
 	}
 	
 	File::~File()
@@ -25,15 +22,35 @@ namespace Pattack
 	    std::fclose(fHandler);
 	}
 	
-	std::string File::read(
-	    const unsigned int length = 0,
-	    const unsigned int offset = 0
+	void File::pace(
+	    const unsigned long int stepLength,
+	    bool absolute,
+	    File::MoveDirection direction
 	)
+	{
+	    switch (direction) {
+		case Pattack::File::File::MoveDirection::FORWARD:
+		    fseek(fHandler, stepLength, absolute ? SEEK_SET : SEEK_CUR);
+		    break;
+		    
+		case Pattack::File::File::MoveDirection::BACKWARD:
+		    fseek(
+			fHandler,
+			-stepLength,
+			absolute ? SEEK_END : SEEK_CUR
+		    );
+		    break;
+	    }
+	    
+	    return;
+	}
+	
+	std::string File::read(const unsigned int length)
 	{
 	    char* buffer;
 	    size_t result;
 	    
-	    buffer = (char*)malloc(sizeof(char)*length);
+	    buffer = (char*)malloc(sizeof(char) * length);
 	    
 	    if (buffer == NULL) {
 		throw std::exception("Memory allocation error");
@@ -48,7 +65,7 @@ namespace Pattack
 	    return new std::string(buffer);
 	}
 	
-	unsigned int write()
+	unsigned int write(std::string)
 	{
 	}
     }
