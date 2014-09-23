@@ -8,8 +8,8 @@
 #ifndef PATTACK_FILE_HXX
 #define	PATTACK_FILE_HXX
 
-#include <cstdio>
-#include <cstring>
+#include <stdio>
+#include <string>
 
 namespace Pattack
 {
