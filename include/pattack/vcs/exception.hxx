@@ -5,14 +5,14 @@
  * Created on September 24, 2014, 2:20 AM
  */
 
-#ifndef PATTACK_FILE_EXCEPTION_HXX
-#define	PATTACK_FILE_EXCEPTION_HXX
+#ifndef PATTACK_VCS_EXCEPTION_HXX
+#define	PATTACK_VCS_EXCEPTION_HXX
 
 #include <pattack/exception.hxx>
 
 namespace Pattack
 {
-    namespace File
+    namespace Vcs
     {
 	class Exception : Pattack::Exception
 	{
@@ -20,5 +20,5 @@ namespace Pattack
     }
 }
 
-#endif	/* PATTACK_FILE_EXCEPTION_HXX */
+#endif	/* PATTACK_VCS_EXCEPTION_HXX */
 
